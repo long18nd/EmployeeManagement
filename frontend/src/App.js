@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./pages/header/Header";
+import {Route, Routes} from "react-router-dom";
+import DashBoard from "./pages/dashboard/DashBoard";
+import NoMatch from "./pages/noMatch/NoMatch";
+import CreateEmployeePage from "./pages/employee/CreateEmployeePage";
+import UpdateEmployeePage from "./pages/employee/UpdateEmployeePage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header/>
+      <Routes>
+        <Route path={'/'} element={<DashBoard/>}/>
+        <Route path={'*'} element={<NoMatch/>}/>
+        <Route path={'/create-employee'} element={<CreateEmployeePage/>}/>
+        <Route path={'/update-employee/:id'} element={<UpdateEmployeePage />} />
+      </Routes>
+    </>
   );
 }
 
