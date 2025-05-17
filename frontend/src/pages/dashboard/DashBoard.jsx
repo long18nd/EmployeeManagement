@@ -46,7 +46,7 @@ const DashBoard = () => {
                 <Col>
                     <div className="d-flex flex-row justify-content-between mt-4 mb-4">
                         <h1>Employees</h1>
-                        <Button>
+                        <Button onClick={() => navigate("/create-employee")}>
                            Create new employee
                         </Button>
                     </div>
